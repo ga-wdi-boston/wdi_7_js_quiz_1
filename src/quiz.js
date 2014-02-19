@@ -12,31 +12,31 @@ var quiz = {};
 // quiz.sleepIn() => false
 // quiz.sleepIn({vacation: true}) => true
 quiz.sleepIn = function(options) {
-}
+  var date = new Date();
+  options[:vacation] === true || date.getDay() % 6 !== 0;
+};
 
-// Question 2: function called nearHundred
-//////////////
-// If the number is between 90 and 99, the result is true;
-// If it is 89 or below, it is false.
-// quiz.nearHundred(52) => false
-// quiz.nearHundred(93) => true
-// quiz.nearHundred('two') => Error: Please enter a number!
+//  if(options[:vacation])return true;
+//  else if(date.getDay() % 6 !== 0) return false;
+//  else return true;
 
-// Question 3: a function called missingChar
-//////////////
-// Remove the character that corresponds to the index from the string.
-// If you don't enter a string
-// quiz.missingChar("kittie", 1) => "kttie"
-// quiz.missingChar(347, 1) => Error: Please enter a string!
+quiz.nearHundred = function(number) {
+  if(90< number == number < 110) return true;
+  else return false;
+};
 
-// Question 4: a function called delDel
-//////////////
-// Remove "del" from a string.
-// quiz.delDel("abdelcd") => "abcd"
-// quiz.delDel("xyz") => "xyz"
+quiz.missingChar = function(string, missingchar) {
+  string.slice(missingchar)
+  return string;
+};
 
-// Question 5: a method called backAround
-//////////////
-// Given a string, move the last character to the beginning.
-// "cat".backAround() => "tca"
-// "hello".backAround() => "ohell"
+quiz.delDel = function(string) {
+  var newString = string.replace(/del/, '')
+  return newString;
+};
+
+
+quiz.backAround = function(string) {
+    var newestString = string.slice(-1) + string
+    return newestString;
+};
