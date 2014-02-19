@@ -12,7 +12,6 @@ var quiz = {};
 // quiz.sleepIn() => false
 // quiz.sleepIn({vacation: true}) => true
 
-
 quiz.sleepIn = function(options) {
   var today = new Date(),
   day = today.getDay();
@@ -24,9 +23,7 @@ quiz.sleepIn = function(options) {
   else
     return false;
 }
-/*
 
-*/
 // Question 2: function called nearHundred
 //////////////
 // If the number is between 90 and 99, the result is true;
@@ -48,13 +45,16 @@ quiz.nearHundred = function(number) {
 // quiz.missingChar("kittie", 1) => "kttie"
 // quiz.missingChar(347, 1) => Error: Please enter a string!
 quiz.missingChar = function(string, index) {
-  string.replace(string[index], '');
+  return string.replace(string[index], '');
 }
 // Question 4: a function called delDel
 //////////////
 // Remove "del" from a string.
 // quiz.delDel("abdelcd") => "abcd"
 // quiz.delDel("xyz") => "xyz"
+quiz.delDel = function(string) {
+  return string.replace('del', '')
+}
 
 // Question 5: a method called backAround
 //////////////
