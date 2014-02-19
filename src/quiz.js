@@ -74,8 +74,6 @@ quiz.delDel = function(string) {
 // "cat".backAround() => "tca"
 // "hello".backAround() => "ohell"
 quiz.backAround = function(string) {
-	var firstChar = string[0];
-	string = string.replace(firstChar, "");
-	string = string + firstChar;
-	return string;
+	var last_char = string[string.length - 1];
+	return last_char + string.replace(last_char, "");
 };
