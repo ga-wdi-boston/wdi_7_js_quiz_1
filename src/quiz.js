@@ -4,6 +4,7 @@
 //      |  |     |   __   | |  |     \   \       |  |     \   \         /  /_\  \      |  |  |  |   |  |  |  | |  |    /  /
 //      |  |     |  |  |  | |  | .----)   |      |  | .----)   |       /  _____  \     |  `--'  '--.|  `--'  | |  |   /  /----.__
 //      |__|     |__|  |__| |__| |_______/       |__| |_______/       /__/     \__\     \_____\_____\\______/  |__|  /________(__)
+
 var quiz = {};
 
 // Question 1: a function called sleepIn
@@ -11,7 +12,18 @@ var quiz = {};
 // You can sleep in if it is not a weekday or if you are on vacation.
 // quiz.sleepIn() => false
 // quiz.sleepIn({vacation: true}) => true
+
+
 quiz.sleepIn = function(options) {
+	if (options.vacation) {
+		return true;
+	}
+	else if ((getDay() === 0) || (getDay() === 7)) {
+		return true;
+	}
+	else {
+		return false;
+	}
 }
 
 // Question 2: function called nearHundred
