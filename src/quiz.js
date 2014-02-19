@@ -13,14 +13,15 @@ var quiz = {};
 // quiz.sleepIn({vacation: true}) => true
 quiz.sleepIn = function(options) {
 	var today = new Date(Date.now());
-	if (self.vacation === true) {
+	options || (options = {});
+	if (options.vacation) {
 		return true;
 	} else if ((today.getDay() === 0) || (today.getDay() === 6)) {
 		return true;
 	} else {
 		return false;
 	}
-}
+};
 
 // Question 2: function called nearHundred
 //////////////
