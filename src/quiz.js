@@ -13,12 +13,11 @@ var quiz = {};
 // quiz.sleepIn({vacation: true}) => true
 quiz.sleepIn = function(options) {
   var date = new Date();
-  options[:vacation] === true || date.getDay() % 6 !== 0;
-};
+    if(options[:vacation])return true;
+    else if(date.getDay() % 6 !== 0) return false;
+    else return true;
+  };
 
-//  if(options[:vacation])return true;
-//  else if(date.getDay() % 6 !== 0) return false;
-//  else return true;
 
 quiz.nearHundred = function(number) {
   if(90< number == number < 110) return true;
