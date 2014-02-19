@@ -22,8 +22,10 @@ quiz.sleepIn = function(options) {
 		return false;
 	}
 }
-var sleep = quiz.sleepIn({vacation: true});
-console.log(sleep);
+// var sleep = quiz.sleepIn({vacation: true});
+// console.log(sleep);
+
+
 // Question 2: function called nearHundred
 //////////////
 // If the number is between 90 and 99, the result is true;
