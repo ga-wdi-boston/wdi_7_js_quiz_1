@@ -13,7 +13,7 @@ var quiz = {};
 // quiz.sleepIn({vacation: true}) => true
 quiz.sleepIn = function(options) {
   var day = new Date();
-  var n = d.getDay;
+  var n = d.getDay();
   if (vacation === true) {
     return true;
   } else {
@@ -74,7 +74,7 @@ quiz.missingChar = function(string, num){
 // quiz.delDel("abdelcd") => "abcd"
 // quiz.delDel("xyz") => "xyz"
 quiz.delDel = function(string){
-  
+
 }
 
 // Question 5: a method called backAround
