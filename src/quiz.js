@@ -31,11 +31,14 @@ quiz.sleepIn = function(options) {
 // quiz.nearHundred(93) => true
 // quiz.nearHundred('two') => Error: Please enter a number!
 quiz.nearHundred = function(n) {
+	if (typeof n !== 'number') {
+		throw new Error("Please enter a number!");
+	};
 	if ((n >= 90) && (n < 100)) {
 		return true;
 	} else {
 		return false;
-	}
+	};
 };
 
 // Question 3: a function called missingChar
@@ -46,13 +49,9 @@ quiz.nearHundred = function(n) {
 // quiz.missingChar(347, 1) => Error: Please enter a string!
 quiz.missingChar = function(string, index) {
 	if (typeof(string) !== "string") {
-		throw "Error: Please enter a string!";
-	}
-  var word = string,
-  		num = parseInt(index, 10),
-  		character;
-	character = word[num];
-	return word.replace(character, "");
+		throw new Error("Please enter a string!");
+	};
+	return string.replace(string[index], "");
 };
 
 // Question 4: a function called delDel
