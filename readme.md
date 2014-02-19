@@ -1,15 +1,7 @@
-# This is a quiz on JavaScript and writing tests!
+# JavaScript Coding Quiz 1
 
-Please see `src/quiz.js` and `spec/quizSpec.js`.
+These questions should seem familiar, since we did them in Ruby!
 
-The first tests for the first question are already written.
-COOL!
+Write the functions for the five questions. You can write any additional code that you need to 'test' the functionality for them as well. Feel free to reference anything in your book, notes or online (except prior student answers) that you need to complete this quiz.
 
-Write the corresponding code.
-
-To run your tests open `SpecRunner.html`.
-
-For the remaining questions write __both__ the tests and functions.
-AGAIN?!
-
-__Please replace this line with your name.__
+Test Driven Development with Jasmine is coming....
