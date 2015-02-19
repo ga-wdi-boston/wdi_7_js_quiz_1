@@ -32,7 +32,7 @@ quiz.sleepIn = function(options) {
 // quiz.nearHundred('two') => Error: Please enter a number!
 
 var nearHundred = function(num){
-  if( 89 < num && num< 100){
+  if( 89 < num && num < 100){
     return true;
   }else if(num < 90 || num > 99){
     return false;
@@ -89,26 +89,11 @@ quiz.delDel = function(str){
 // Given a string, move the last character to the beginning.
 // "cat".backAround() => "tca"
 // "hello".backAround() => "ohell"
-// var Word = function(str){
-//    this.str = str;
-//  }
-
-//  Word.prototype = {
-//    backAround: function(str){
-//     if(!(typeof(str) === 'string')){
-//       return "Error: Please enter a string!";
-//     }else{
-//       var out =  str[str.length-1] + str.slice(0,str.length-1);
-//       return out;
-//     }
-//   }
-// };
-
 
 String.prototype.backAround = function(){
   return  this[this.length-1] + this.slice(0,this.length-1);
 };
 
-  console.log("cat".backAround());
-//Last minute change to make the string an object. Not tested.
-// console.log(backAround("cat"));
+  // console.log("cat".backAround());
+  // console.log("hello".backAround());
+
