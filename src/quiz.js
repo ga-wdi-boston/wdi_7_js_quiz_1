@@ -5,14 +5,18 @@
 //      |  |     |  |  |  | |  | .----)   |      |  | .----)   |       /  _____  \     |  `--'  '--.|  `--'  | |  |   /  /----.__
 //      |__|     |__|  |__| |__| |_______/       |__| |_______/       /__/     \__\     \_____\_____\\______/  |__|  /________(__)
 var quiz = {};
-
+function trace(){for (var i = -. count = arguments.length; i <count; i++){}}
 // Question 1: a function called sleepIn
 //////////////
 // You can sleep in if it is not a weekday or if you are on vacation.
 // quiz.sleepIn() => false
 // quiz.sleepIn({vacation: true}) => true
 quiz.sleepIn = function(options) {
-}
+  if (options && options.vaction === true) {
+    return true; } else {
+      return false;
+    }
+};
 
 // Question 2: function called nearHundred
 //////////////
@@ -21,6 +25,15 @@ quiz.sleepIn = function(options) {
 // quiz.nearHundred(52) => false
 // quiz.nearHundred(93) => true
 // quiz.nearHundred('two') => Error: Please enter a number!
+quiz.nearHundred = function(num) {
+  if (num > 89 && num < 100) {
+    return true;
+  } else if (typeof num !== 'number') {
+    return "Error: please enter a number!";
+  } else {
+    return false;
+  }
+};
 
 // Question 3: a function called missingChar
 //////////////
@@ -29,14 +42,37 @@ quiz.sleepIn = function(options) {
 // quiz.missingChar("kittie", 1) => "kttie"
 // quiz.missingChar(347, 1) => Error: Please enter a string!
 
+quiz.missingChar = function(string, index) {
+  if (typeof string === 'string') {
+    return string.substring(0, index) + string.substring(index + 1, string.length);
+  } else {
+    return "Error: Please enter a string!";
+  }
+};
+
 // Question 4: a function called delDel
 //////////////
 // Remove "del" from a string.
 // quiz.delDel("abdelcd") => "abcd"
 // quiz.delDel("xyz") => "xyz"
-
+quiz.delDel = function(string) {
+  return string.replace('del', '');
+};
 // Question 5: a method called backAround
 //////////////
 // Given a string, move the last character to the beginning.
 // "cat".backAround() => "tca"
 // "hello".backAround() => "ohell"
+
+
+String.prototype.backAround = function() {
+  var last = this.charAt(this.length - 1);
+  return last + this.slice(0, (this.length - 1));
+};
+
+
+
+
+
+
+
