@@ -89,15 +89,20 @@ quiz.delDel = function(str){
 // Given a string, move the last character to the beginning.
 // "cat".backAround() => "tca"
 // "hello".backAround() => "ohell"
+var Word = function(str){
+   this.str = str;
+ }
 
-var backAround = function(str){
-
-  if(!(typeof(str) === 'string')){
-    return "Error: Please enter a string!";
-  }else{
+ Word.prototype = {
+   backAround: function(str){
+    if(!(typeof(str) === 'string')){
+      return "Error: Please enter a string!";
+    }else{
       var out =  str[str.length-1] + str.slice(0,str.length-1);
       return out;
-  };
-}
+    }
+  }
+};
 
-console.log(backAround("cat"));
+//Last minute change to make the string an object. Not tested.
+// console.log(backAround("cat"));
