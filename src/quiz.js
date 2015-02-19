@@ -106,13 +106,8 @@ quiz.delDel = function(str){
 
 
 String.prototype.backAround = function(){
-    // if(!(typeof(this) === 'string')){
-    //   return "Error: Please enter a string!";
-    // }else{
-      var out =  this[this.length-1] + this.slice(0,this.length-1);
-      return out;
-    // };
-  };
+  return  this[this.length-1] + this.slice(0,this.length-1);
+};
 
   console.log("cat".backAround());
 //Last minute change to make the string an object. Not tested.
