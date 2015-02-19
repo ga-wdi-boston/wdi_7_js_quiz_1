@@ -12,8 +12,15 @@ var quiz = {};
 // quiz.sleepIn() => false
 // quiz.sleepIn({vacation: true}) => true
 quiz.sleepIn = function(options) {
+
+  if (options === 'monday' || options === 'tuesday' || options === 'wednesday' || options === 'thursday' || options === 'friday') {
+    return false;
+  } else {
+    return true;
+  };
 }
 
+console.log(quiz.sleepIn('saturday'));
 // Question 2: function called nearHundred
 //////////////
 // If the number is between 90 and 99, the result is true;
@@ -22,12 +29,31 @@ quiz.sleepIn = function(options) {
 // quiz.nearHundred(93) => true
 // quiz.nearHundred('two') => Error: Please enter a number!
 
+quiz.nearHundred = function(num) {
+  var numbers = [];
+  for (var number = 90; number < 100; number++){
+    numbers.push(number);
+  };
+
+  if (num in numbers == true) {
+    return true;
+  } else {
+    return false;
+  };
+}
+
+console.log(quiz.nearHundred(95));
+
 // Question 3: a function called missingChar
 //////////////
 // Remove the character that corresponds to the index from the string.
 // If you don't enter a string
 // quiz.missingChar("kittie", 1) => "kttie"
 // quiz.missingChar(347, 1) => Error: Please enter a string!
+
+// quiz.function missingChar(str) {
+
+// }
 
 // Question 4: a function called delDel
 //////////////
