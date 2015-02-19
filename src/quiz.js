@@ -55,15 +55,15 @@ var nearHundred = function(num){
 
 quiz.missingChar = function(str, ind){
 
-  if(!(typeof(str)=== 'string')){
+  if(!(typeof(str) === 'string')){
     return "Error: Please enter a string!";
   }else{
     return str.slice(0, ind) + str.slice(ind+1, str.length);
   };
 };
 
-console.log(quiz.missingChar("kittie", 1));
-console.log(quiz.missingChar(347, 1));
+// console.log(quiz.missingChar("kittie", 1));
+// console.log(quiz.missingChar(347, 1));
 
 // Question 4: a function called delDel
 //////////////
@@ -71,8 +71,33 @@ console.log(quiz.missingChar(347, 1));
 // quiz.delDel("abdelcd") => "abcd"
 // quiz.delDel("xyz") => "xyz"
 
+quiz.delDel = function(str){
+  if(!(typeof(str) === 'string')){
+    return "Error: Please enter a string!";
+  }else{
+    var ind=str.indexOf('del');
+    return str.slice(0, ind) + str.slice(ind+3, str.length);
+  };
+}
+
+// console.log(quiz.delDel("abdelcd"));
+// console.log(quiz.delDel("xyz"));
+
+
 // Question 5: a method called backAround
 //////////////
 // Given a string, move the last character to the beginning.
 // "cat".backAround() => "tca"
 // "hello".backAround() => "ohell"
+
+var backAround = function(str){
+
+  if(!(typeof(str) === 'string')){
+    return "Error: Please enter a string!";
+  }else{
+      var out =  str[str.length-1] + str.slice(0,str.length-1);
+      return out;
+  };
+}
+
+console.log(backAround("cat"));
