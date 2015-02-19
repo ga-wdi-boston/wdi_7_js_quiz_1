@@ -22,6 +22,17 @@ quiz.sleepIn = function(options) {
 // quiz.nearHundred(93) => true
 // quiz.nearHundred('two') => Error: Please enter a number!
 
+var nearHundred = function(num){
+  if (num > 89 && num < 99){
+    return true;
+  }else if (num < 89){
+    return false;
+  }else{
+    return "please enter a number!";
+  };
+};
+// console.log(nearHundred("two"))
+
 // Question 3: a function called missingChar
 //////////////
 // Remove the character that corresponds to the index from the string.
@@ -29,11 +40,35 @@ quiz.sleepIn = function(options) {
 // quiz.missingChar("kittie", 1) => "kttie"
 // quiz.missingChar(347, 1) => Error: Please enter a string!
 
+var missingChar = function(string, num){
+  if (typeof(num) === 'string'){
+    return "Error: Please enter a string!";
+  } else {
+    (newString = string.slice(num, num +1));
+    return newString;
+  };
+};
+console.log(missingChar("bob", 1))
+
+// only retuns letter trying to remove
+
 // Question 4: a function called delDel
 //////////////
 // Remove "del" from a string.
 // quiz.delDel("abdelcd") => "abcd"
 // quiz.delDel("xyz") => "xyz"
+
+delDel = function(string1){
+  pos1 = string1.search("del");
+    if (true){
+      var string2 = string1.slice(pos1, pos1 + 3);
+      return string2;
+    }else {
+      return string1;
+    };
+};
+
+console.log(delDel("bobdel"));
 
 // Question 5: a method called backAround
 //////////////
