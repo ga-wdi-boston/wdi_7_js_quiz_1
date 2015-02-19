@@ -14,6 +14,8 @@ var quiz = {};
 quiz.sleepIn = function(options) {
 }
 
+// no idea what is being asked here
+
 // Question 2: function called nearHundred
 //////////////
 // If the number is between 90 and 99, the result is true;
