@@ -12,7 +12,15 @@ var quiz = {};
 // quiz.sleepIn() => false
 // quiz.sleepIn({vacation: true}) => true
 quiz.sleepIn = function(options) {
-}
+  var weekday = true
+  var vacation = true
+
+
+  if options === 'weekday' || 'vacation'
+    return true
+  else
+    return false
+};
 
 // Question 2: function called nearHundred
 //////////////
@@ -21,6 +29,12 @@ quiz.sleepIn = function(options) {
 // quiz.nearHundred(52) => false
 // quiz.nearHundred(93) => true
 // quiz.nearHundred('two') => Error: Please enter a number!
+var nearHundred = function(num){
+  if num === (90...99)
+    return true
+  else
+    return false
+};
 
 // Question 3: a function called missingChar
 //////////////
@@ -28,15 +42,24 @@ quiz.sleepIn = function(options) {
 // If you don't enter a string
 // quiz.missingChar("kittie", 1) => "kttie"
 // quiz.missingChar(347, 1) => Error: Please enter a string!
+var missingChar = function() {
+  str.replace.indexOF('1');
+};
 
 // Question 4: a function called delDel
 //////////////
 // Remove "del" from a string.
 // quiz.delDel("abdelcd") => "abcd"
 // quiz.delDel("xyz") => "xyz"
+var delDel = function(){
+  str.replace('del', '');
+};
 
 // Question 5: a method called backAround
 //////////////
 // Given a string, move the last character to the beginning.
 // "cat".backAround() => "tca"
 // "hello".backAround() => "ohell"
+var backAround = function(str) {
+  str.slice(-1);
+};
