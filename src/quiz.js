@@ -9,6 +9,9 @@ var quiz = {};
 // Question 1: a function called sleepIn
 //////////////
 // You can sleep in if it is not a weekday or if you are on vacation.
+// You are *not* passing in today's date as an argument to this function
+// Inside the function you will have to determine the day of the week.
+// The function will be impure and will return different results on the weekends!
 // quiz.sleepIn() => false
 // quiz.sleepIn({vacation: true}) => true
 quiz.sleepIn = function(options) {
