@@ -13,15 +13,10 @@ var quiz = {};
 // quiz.sleepIn({vacation: true}) => true
 
 quiz.sleepIn = function(options) {
-  this.options = options;
-  if ({vacation: true}) {
+  if (options.vacation || options === 'saturday' || options === 'sunday') {
     return true;
-  } else if (options === 'saturday' || 'sunday') {
-    return true;
-  } else if (options === 'monday' || 'tuesday' || 'wednesday' || 'thursday' || 'friday') {
-    return false;
   } else {
-    return 'wat';
+    return false;
   }
 }
 //come back to this
@@ -62,12 +57,26 @@ console.log(quiz.nearHundred("two") + " for 'two'");
 // quiz.missingChar("kittie", 1) => "kttie"
 // quiz.missingChar(347, 1) => Error: Please enter a string!
 
-quiz.missingChar = function(chary, index){
-  return chary.slice(0, index);
-}
+quiz.missingChar = function(string, index) {
+  // if(typeof string != "string"){
+  //   throw new Error("Please enter a string!");
+  // } else {
+  //   string = string.split("");
+  //   string.splice(index,1);
+  //   return string.join("");
+  // }
+  if (typeof string === 'string') {
+    // makes a new string starting at the first argument, for the length of the second argument
+    return string.substring(0, index) + string.substring(index + 1, string.length);
+  } else {
+    return "Error: Please enter a string!";
+  }
+};
 
-// console.log(quiz.missingChar("kittie", 1));
-// console.log(quiz.missingChar(347, 1));
+
+
+console.log(quiz.missingChar("kittie", 1));
+console.log(quiz.missingChar(347, 1));
 
 
 // Question 4: a function called delDel
@@ -88,3 +97,10 @@ console.log(quiz.delDel("xyz"));
 // Given a string, move the last character to the beginning.
 // "cat".backAround() => "tca"
 // "hello".backAround() => "ohell"
+
+String.prototype.backAround = function(){
+  return this[this.length-1] + this.slice(0,this.length-1);
+};
+
+console.log('cat'.backAround());
+console.log('hello'.backAround());
