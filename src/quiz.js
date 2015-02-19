@@ -12,7 +12,12 @@ var quiz = {};
 // quiz.sleepIn() => false
 // quiz.sleepIn({vacation: true}) => true
 quiz.sleepIn = function(options) {
-}
+  if (options === undefined) {
+    return false;
+  } else if (options.vacation) {
+      return true;
+    }
+};
 
 // Question 2: function called nearHundred
 //////////////
@@ -21,6 +26,15 @@ quiz.sleepIn = function(options) {
 // quiz.nearHundred(52) => false
 // quiz.nearHundred(93) => true
 // quiz.nearHundred('two') => Error: Please enter a number!
+quiz.nearHundred = function(num) {
+  if (num > 89 && num < 100) {
+    return true;
+  } else if (typeof num !== 'number') {
+    return "Error: please enter a number!";
+  } else {
+    return false;
+  }
+};
 
 // Question 3: a function called missingChar
 //////////////
@@ -29,14 +43,37 @@ quiz.sleepIn = function(options) {
 // quiz.missingChar("kittie", 1) => "kttie"
 // quiz.missingChar(347, 1) => Error: Please enter a string!
 
+quiz.missingChar = function(string, index) {
+  if (typeof string === 'string') {
+    return string.substring(0, index) + string.substring(index + 1, string.length);
+  } else {
+    return "Error: Please enter a string!";
+  }
+};
+
 // Question 4: a function called delDel
 //////////////
 // Remove "del" from a string.
 // quiz.delDel("abdelcd") => "abcd"
 // quiz.delDel("xyz") => "xyz"
-
+quiz.delDel = function(string) {
+  return string.replace(/d|e|l/g, '');
+};
 // Question 5: a method called backAround
 //////////////
 // Given a string, move the last character to the beginning.
 // "cat".backAround() => "tca"
 // "hello".backAround() => "ohell"
+
+
+String.prototype.backAround = function() {
+  var last = this.charAt(this.length - 1);
+  return last + this.slice(0, (this.length - 1));
+};
+
+
+
+
+
+
+
