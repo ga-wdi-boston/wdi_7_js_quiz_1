@@ -91,7 +91,7 @@ console.log(quiz.delDel("xyz"));
 // "hello".backAround() => "ohell"
 
 quiz.backAround = function(string){
-  string = string + string[0];
-  return string.substring(1);
+  string = string[string.length-1] + string;
+  return string.substring(0,string.length-1);
 };
 console.log(quiz.backAround("cat"));
