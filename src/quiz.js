@@ -5,14 +5,24 @@
 //      |  |     |  |  |  | |  | .----)   |      |  | .----)   |       /  _____  \     |  `--'  '--.|  `--'  | |  |   /  /----.__
 //      |__|     |__|  |__| |__| |_______/       |__| |_______/       /__/     \__\     \_____\_____\\______/  |__|  /________(__)
 var quiz = {};
+var weekday;
+var vacation;
 
-// Question 1: a function called sleepIn
-//////////////
-// You can sleep in if it is not a weekday or if you are on vacation.
-// quiz.sleepIn() => false
-// quiz.sleepIn({vacation: true}) => true
+// // Question 1: a function called sleepIn
+// //////////////
+// // You can sleep in if it is not a weekday or if you are on vacation.
+// // quiz.sleepIn() => false
+// // quiz.sleepIn({vacation: true}) => true
 quiz.sleepIn = function(options) {
-}
+ 
+
+  if(vacation || !weekday) {
+    return true;
+  } else {
+    return false;
+  };
+};
+
 
 // Question 2: function called nearHundred
 //////////////
@@ -21,6 +31,16 @@ quiz.sleepIn = function(options) {
 // quiz.nearHundred(52) => false
 // quiz.nearHundred(93) => true
 // quiz.nearHundred('two') => Error: Please enter a number!
+
+var nearHundred = function(num) {
+  if (num > 100 && num < 99) {
+    return true;
+  } else if (num < 89) {
+    return false;
+  } else (num typeOf Number === false) {
+    throw new Error("please provide a number");
+  }
+};
 
 // Question 3: a function called missingChar
 //////////////
