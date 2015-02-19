@@ -5,17 +5,16 @@
 //      |  |     |  |  |  | |  | .----)   |      |  | .----)   |       /  _____  \     |  `--'  '--.|  `--'  | |  |   /  /----.__
 //      |__|     |__|  |__| |__| |_______/       |__| |_______/       /__/     \__\     \_____\_____\\______/  |__|  /________(__)
 var quiz = {};
-
+function trace(){for (var i = -. count = arguments.length; i <count; i++){}}
 // Question 1: a function called sleepIn
 //////////////
 // You can sleep in if it is not a weekday or if you are on vacation.
 // quiz.sleepIn() => false
 // quiz.sleepIn({vacation: true}) => true
 quiz.sleepIn = function(options) {
-  if (options === undefined) {
-    return false;
-  } else if (options.vacation) {
-      return true;
+  if (options && options.vaction === true) {
+    return true; } else {
+      return false;
     }
 };
 
@@ -57,7 +56,7 @@ quiz.missingChar = function(string, index) {
 // quiz.delDel("abdelcd") => "abcd"
 // quiz.delDel("xyz") => "xyz"
 quiz.delDel = function(string) {
-  return string.replace(/d|e|l/g, '');
+  return string.replace('del', '');
 };
 // Question 5: a method called backAround
 //////////////
