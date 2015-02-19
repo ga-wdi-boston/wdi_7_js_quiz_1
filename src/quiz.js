@@ -12,7 +12,16 @@ var quiz = {};
 // quiz.sleepIn() => false
 // quiz.sleepIn({vacation: true}) => true
 quiz.sleepIn = function(options) {
-}
+    if(options){
+      return true
+    }else{
+      return false
+    };
+};
+
+// console.log(quiz.sleepIn({vacation: true}));
+// console.log(quiz.sleepIn());
+
 
 // Question 2: function called nearHundred
 //////////////
@@ -22,12 +31,39 @@ quiz.sleepIn = function(options) {
 // quiz.nearHundred(93) => true
 // quiz.nearHundred('two') => Error: Please enter a number!
 
+var nearHundred = function(num){
+  if( 89 < num && num< 100){
+    return true;
+  }else if(num < 90 || num > 99){
+    return false;
+  }else{
+    return "Error: Please enter a number!";
+  };
+};
+
+// console.log(nearHundred(95));
+// console.log(nearHundred(89));
+// console.log(nearHundred("two"));
+// console.log(nearHundred("ninty"));
+
 // Question 3: a function called missingChar
 //////////////
 // Remove the character that corresponds to the index from the string.
 // If you don't enter a string
 // quiz.missingChar("kittie", 1) => "kttie"
 // quiz.missingChar(347, 1) => Error: Please enter a string!
+
+quiz.missingChar = function(str, ind){
+
+  if(!(typeof(str)=== 'string')){
+    return "Error: Please enter a string!";
+  }else{
+    return str.slice(0, ind) + str.slice(ind+1, str.length);
+  };
+};
+
+console.log(quiz.missingChar("kittie", 1));
+console.log(quiz.missingChar(347, 1));
 
 // Question 4: a function called delDel
 //////////////
