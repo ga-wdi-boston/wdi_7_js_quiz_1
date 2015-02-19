@@ -12,7 +12,16 @@ var quiz = {};
 // quiz.sleepIn() => false
 // quiz.sleepIn({vacation: true}) => true
 quiz.sleepIn = function(options) {
-}
+    if(options){
+      return true
+    }else{
+      return false
+    };
+};
+
+// console.log(quiz.sleepIn({vacation: true}));
+// console.log(quiz.sleepIn());
+
 
 // Question 2: function called nearHundred
 //////////////
@@ -22,6 +31,21 @@ quiz.sleepIn = function(options) {
 // quiz.nearHundred(93) => true
 // quiz.nearHundred('two') => Error: Please enter a number!
 
+var nearHundred = function(num){
+  if( 89 < num && num < 100){
+    return true;
+  }else if(num < 90 || num > 99){
+    return false;
+  }else{
+    return "Error: Please enter a number!";
+  };
+};
+
+// console.log(nearHundred(95));
+// console.log(nearHundred(89));
+// console.log(nearHundred("two"));
+// console.log(nearHundred("ninty"));
+
 // Question 3: a function called missingChar
 //////////////
 // Remove the character that corresponds to the index from the string.
@@ -29,14 +53,47 @@ quiz.sleepIn = function(options) {
 // quiz.missingChar("kittie", 1) => "kttie"
 // quiz.missingChar(347, 1) => Error: Please enter a string!
 
+quiz.missingChar = function(str, ind){
+
+  if(!(typeof(str) === 'string')){
+    return "Error: Please enter a string!";
+  }else{
+    return str.slice(0, ind) + str.slice(ind+1, str.length);
+  };
+};
+
+// console.log(quiz.missingChar("kittie", 1));
+// console.log(quiz.missingChar(347, 1));
+
 // Question 4: a function called delDel
 //////////////
 // Remove "del" from a string.
 // quiz.delDel("abdelcd") => "abcd"
 // quiz.delDel("xyz") => "xyz"
 
+quiz.delDel = function(str){
+  if(!(typeof(str) === 'string')){
+    return "Error: Please enter a string!";
+  }else{
+    var ind=str.indexOf('del');
+    return str.slice(0, ind) + str.slice(ind+3, str.length);
+  };
+}
+
+// console.log(quiz.delDel("abdelcd"));
+// console.log(quiz.delDel("xyz"));
+
+
 // Question 5: a method called backAround
 //////////////
 // Given a string, move the last character to the beginning.
 // "cat".backAround() => "tca"
 // "hello".backAround() => "ohell"
+
+String.prototype.backAround = function(){
+  return  this[this.length-1] + this.slice(0,this.length-1);
+};
+
+  // console.log("cat".backAround());
+  // console.log("hello".backAround());
+
