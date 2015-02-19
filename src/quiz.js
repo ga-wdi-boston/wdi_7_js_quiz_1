@@ -38,15 +38,16 @@ console.log(quiz.sleepIn({vacation: true, day:'saturday'}));
 quiz.nearHundred = function(x){
   if (typeof x !== 'number'){
     return "Error: Please enter a number!";
-  } else if (x < 89){
-    return false;
-  } else {
+  } else if (x > 89 && x < 100) {
     return true;
+  } else {
+    return false
   }
 };
 console.log(quiz.nearHundred('cat'));
 console.log(quiz.nearHundred(91));
 console.log(quiz.nearHundred(87));
+console.log(quiz.nearHundred(100));
 
 // Question 3: a function called missingChar
 //////////////
