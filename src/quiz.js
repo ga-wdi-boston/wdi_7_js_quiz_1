@@ -15,8 +15,12 @@ var quiz = {};
 // };
 
 quiz.sleepIn = function(options){
-  if (options.day === 'saturday' || options.day === 'sunday' || options.vacation === true){
-    return true;
+  if (!options){
+    return false
+  } else if (options.vacation) {
+    return true
+  } else if (options.day && options.day === 'saturday' || options.day === 'sunday') {
+    return true
   } else {
     return false;
   }
@@ -26,6 +30,7 @@ console.log(quiz.sleepIn({vacation: false, day:'monday'}));
 console.log(quiz.sleepIn({vacation: true, day:'monday'}));
 console.log(quiz.sleepIn({vacation: false, day:'sunday'}));
 console.log(quiz.sleepIn({vacation: true, day:'saturday'}));
+console.log(quiz.sleepIn());
 
 // Question 2: function called nearHundred
 //////////////
