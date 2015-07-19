@@ -25,12 +25,27 @@ quiz.sleepIn = function(options) {
 // quiz.nearHundred(93) => true
 // quiz.nearHundred('two') => Error: Please enter a number!
 
+quiz.nearHundred = function(number) {
+  if (number >= 90 && number <= 99) {
+    return true;
+  } else if (number <= 89) {
+    return false;
+  } else if (typeof number !== number) {
+    return "Error: Please enter a number!";
+  }
+};
+
 // Question 3: a function called missingChar
 //////////////
 // Remove the character that corresponds to the index from the string.
 // If you don't enter a string
 // quiz.missingChar("kittie", 1) => "kttie"
 // quiz.missingChar(347, 1) => Error: Please enter a string!
+
+missingChar = function(string, index) {
+  delete string.charAt(index); //this doesn't work, but I gave it a shot
+
+};
 
 // Question 4: a function called delDel
 //////////////
